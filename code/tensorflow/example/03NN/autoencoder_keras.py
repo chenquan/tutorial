@@ -31,16 +31,13 @@ num_input = 784  #
 # 建立编码网络
 def encoder(x):
     layer_1 = tf.keras.layers.Dense(num_hidden_1, activation='sigmoid')(x)
-    layer_2 = tf.keras.layers.Dense(num_hidden_2, activation='sigmoid')(layer_1)
-
-    return layer_2
+    return tf.keras.layers.Dense(num_hidden_2, activation='sigmoid')(layer_1)
 
 
 # 建立解码网络
 def decoder(x):
     layer_1 = tf.keras.layers.Dense(num_hidden_1, activation='sigmoid')(x)
-    layer_2 = tf.keras.layers.Dense(num_input, activation='sigmoid')(layer_1)
-    return layer_2
+    return tf.keras.layers.Dense(num_input, activation='sigmoid')(layer_1)
 
 
 # 创建自解码网络

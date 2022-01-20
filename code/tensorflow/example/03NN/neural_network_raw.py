@@ -44,9 +44,7 @@ def neural_net(x):
     layer_1 = tf.add(tf.matmul(x, weights['h1']), biases['b1'])
     # Hidden fully connected layer with 256 neurons
     layer_2 = tf.add(tf.matmul(layer_1, weights['h2']), biases['b2'])
-    # Output fully connected layer with a neuron for each class
-    out_layer = tf.matmul(layer_2, weights['out']) + biases['out']
-    return out_layer
+    return tf.matmul(layer_2, weights['out']) + biases['out']
 
 
 # 创建模型

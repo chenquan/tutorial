@@ -45,7 +45,7 @@ with tf.Session() as sess:
     # Training cycle
     for epoch in range(training_epochs):
         avg_cost = 0.
-        total_batch = int(len(X_train) / batch_size)
+        total_batch = len(X_train) // batch_size
         # Loop over all batches
         for i in range(total_batch):
             batch_xs, batch_ys = X_train[i * batch_size:(i + 1) * batch_size], y_train[
